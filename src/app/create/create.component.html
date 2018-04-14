@@ -1,0 +1,38 @@
+<mat-card>
+  Name:
+  <mat-form-field>
+    <input matInput [(ngModel)]="answer" placeholder="Character Name">
+  </mat-form-field>
+  <br>
+  Age: 
+  <br>
+  Gender: 
+  Cis
+  <mat-slide-toggle [(ngModel)]="playerTrans">
+    Amazing
+  </mat-slide-toggle>
+   | M
+  <span *ngIf="!playerTrans">
+    <mat-slide-toggle [(ngModel)]="playerCis"></mat-slide-toggle>
+  </span>
+  <span *ngIf="playerTrans">
+    <mat-slider [(ngModel)]="playerGender"></mat-slider>
+  </span>
+  F
+  <br>
+  Orientation:
+  <mat-radio-group [(ngModel)]="playerOrientation">
+    <mat-radio-button *ngFor="let orientation of orientations" [value]="orientation">
+      {{ orientation }}
+    </mat-radio-button>
+  </mat-radio-group>
+  <br>
+  Region:
+  <mat-radio-group [(ngModel)]="playerRegion">
+    <mat-radio-button *ngFor="let region of regions" [value]="region">
+      {{ region }}
+    </mat-radio-button>
+  </mat-radio-group>
+  <br>
+  <button mat-raised-button (click)="createCharacter()" color="accent">Create Character</button>
+</mat-card>
