@@ -9,13 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { TitlebarComponent } from './titlebar/titlebar.component';
-import { CreateComponent } from './create/create.component';
+import { QueeroesComponent } from './queeroes/queeroes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitlebarComponent,
-    CreateComponent
+    QueeroesComponent
   ],
   imports: [
     BrowserModule,
