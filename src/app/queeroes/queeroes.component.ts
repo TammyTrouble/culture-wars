@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Queer } from '../queer';
 import { QUEEROES } from '../mock-queeroes';
+import { QueerService } from '../queer.service';
 
 @Component({
   selector: 'app-queeroes',
@@ -9,13 +10,14 @@ import { QUEEROES } from '../mock-queeroes';
 })
 export class QueeroesComponent implements OnInit {
 
-	queeroes = QUEEROES;
+	queeroes: Queer[];
 
 	selectedQueer: Queer;
 
-	constructor() { }
+	constructor(private queerService: QueerService) { }
 
 	ngOnInit() {
+		this.getQueeroes();
 	}
 
 	onSelect(queer: Queer): void {
@@ -24,5 +26,10 @@ export class QueeroesComponent implements OnInit {
 
 	addCharacter(): void {
 
+	}
+
+	getQueeroes(): void {
+		this.queerService.getQueeroes()
+			.subscribe(queeroes => this.queeroes = queeroes);
 	}
 }

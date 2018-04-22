@@ -31,6 +31,8 @@ export class QueerDetailComponent implements OnInit {
 		this.queeroes.push(newQueer);
 	}
 
+	deleteCharacter() {
+	}
 
   constructor() { }
 
