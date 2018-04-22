@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Queer } from '../queer';
+import { QUEEROES } from '../mock-queeroes';
 
 @Component({
   selector: 'app-queeroes',
@@ -7,41 +8,21 @@ import { Queer } from '../queer';
   styleUrls: ['./queeroes.component.css']
 })
 export class QueeroesComponent implements OnInit {
-	queer: Queer = {
-		id: 1,
-		name: '',
-		gender: Math.floor(Math.random() * 101),
-		cis: false,
-		orientation: 'Pan',
-		region: 'West',
-		influence: 0
-	}
 
-	QUEEROES: Queer[] = [];
+	queeroes = QUEEROES;
 
-	regions = [
-		'North',
-		'East',
-		'South',
-		'West'
-	];
-
-	orientations = [
-		'Pan',
-		'Homo',
-		'Bi',
-		'het'
-	];
-
-	createCharacter() {
-		let newQueer = new Queer(this.queer.id, this.queer.name, this.queer.gender,
-								 this.queer.cis, this.queer.orientation, this.queer.region);
-		this.QUEEROES.push(newQueer);
-	}
+	selectedQueer: Queer;
 
 	constructor() { }
 
 	ngOnInit() {
 	}
 
+	onSelect(queer: Queer): void {
+		this.selectedQueer = queer;
+	}
+
+	addCharacter(): void {
+
+	}
 }

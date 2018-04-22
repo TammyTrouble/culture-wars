@@ -10,12 +10,14 @@ import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { TitlebarComponent } from './titlebar/titlebar.component';
 import { QueeroesComponent } from './queeroes/queeroes.component';
+import { QueerDetailComponent } from './queer-detail/queer-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitlebarComponent,
-    QueeroesComponent
+    QueeroesComponent,
+    QueerDetailComponent
   ],
   imports: [
     BrowserModule,
