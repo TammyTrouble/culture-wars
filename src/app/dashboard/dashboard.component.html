@@ -1,0 +1,8 @@
+<h3>Top Queeroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let queer of queeroes" class="col-1-4" routerLink="/detail/{{queer.id}}">
+    <div class="module queer">
+      <h4>{{queer.name}}</h4>
+    </div>
+  </a>
+</div>

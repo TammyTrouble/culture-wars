@@ -13,6 +13,19 @@ export class QueerService {
 		return of(QUEEROES);
 	}
 
+	getQueer(id: number): Observable<Queer> {
+		this.messageService.add(`QueerService: fetched queer id=${id}`);
+		return of(QUEEROES.find(queer => queer.id === id));
+	}
+
+	createQueer() {
+
+	}
+
+	deleteQueer() {
+
+	}
+
   constructor(private messageService: MessageService) { }
 
 }

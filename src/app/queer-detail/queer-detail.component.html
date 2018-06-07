@@ -1,5 +1,7 @@
 <mat-card *ngIf="queer">
   <mat-card-header>
+  	<a (click)="goBack()"><mat-icon class="material-icons detail-icon">keyboard_arrow_left</mat-icon></a>
+
     <mat-card-title><h2>Create Character : {{ queer.name | uppercase }}</h2></mat-card-title>
   </mat-card-header>
   <mat-card-content>
@@ -44,6 +46,6 @@
   <mat-card-actions>
     <button mat-raised-button (click)="createCharacter()" color="accent"
       [disabled]="!name.valid">Create Character</button>
-    <button mat-raised-button (click)="deleteCharacter()" color="warn">Cancel</button>
+    <button mat-raised-button (click)="deleteCharacter()" color="warn">Delete</button>
   </mat-card-actions>
 </mat-card>

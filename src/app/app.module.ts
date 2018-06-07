@@ -13,6 +13,9 @@ import { QueerDetailComponent } from './queer-detail/queer-detail.component';
 import { QueerService } from './queer.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SettingsComponent } from './settings/settings.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { MessageService } from './message.service';
     TitlebarComponent,
     QueeroesComponent,
     QueerDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent,
+    SettingsComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

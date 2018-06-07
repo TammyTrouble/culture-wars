@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
+//import { Router } from '@angular/router';
 import { Queer } from '../queer';
 import { QUEEROES } from '../mock-queeroes';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { QueerService } from '../queer.service';
 
 @Component({
   selector: 'app-queer-detail',
@@ -32,11 +36,29 @@ export class QueerDetailComponent implements OnInit {
 	}
 
 	deleteCharacter() {
+		var index = this.queeroes.indexOf(this.queer, 0);
+		if (index > -1)
+			this.queeroes.splice(index, 1);
+		//this.router.navigate(['/']);
 	}
 
-  constructor() { }
+	constructor(
+		private route: ActivatedRoute,
+		private queerService: QueerService,
+		private location: Location
+	) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.getQueer();
+	}
 
+	getQueer(): void {
+		const id = +this.route.snapshot.paramMap.get('id');
+		this.queerService.getQueer(id)
+			.subscribe(queer => this.queer = queer);
+	}
+
+	goBack(): void {
+		this.location.back();
+	}
 }

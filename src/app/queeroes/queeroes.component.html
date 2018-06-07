@@ -4,15 +4,16 @@
   </mat-card-header>
   <mat-card-content>
     <ul class="queeroes">
-      <li *ngFor="let queer of queeroes"
-        [class.selected]="queer === selectedQueer"
-        (click)="onSelect(queer)">
-        <span class="badge">{{ queer.influence }}</span>{{ queer.name }} - {{ queer.region }}
+      <li *ngFor="let queer of queeroes">
+        <a routerLink="/detail/{{queer.id}}">
+          <span class="badge">{{ queer.influence }}</span>{{ queer.name }} - {{ queer.region }}
+        </a>
       </li>
     </ul>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="addCharacter()" color="accent">Add Character</button>
+    <button *ngIf="queeroes.length < 8"
+             mat-raised-button (click)="addCharacter()" color="accent">Add Character</button>
   </mat-card-actions>
 </mat-card>
 
